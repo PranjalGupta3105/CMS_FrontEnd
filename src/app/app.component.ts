@@ -8,23 +8,28 @@ import { ApiService } from './api.service';
 })
 export class AppComponent {
   title = 'Career Master';
+  tokenvalue: string;
   token;
 
   constructor(private apiService: ApiService){}
 
-  // AuthenticateUser(username, password)
-  // {
-  //   console.log("Button Clicked"+"Did you just entered the username as "+username+" and password as "+password);
+  public AuthenticateUser(username, password) : void
+  {
+    console.log("Button Clicked"+"Did you just entered the username as "+username+" and password as "+password);
     
-  //   this.verifyUser()
-  // }
-  // verifyUser()
-  // {
-    ngOnInit(){
-    this.apiService.ValidateRequestedAuthentication().subscribe((data)=>{
-      console.log(data);
+    this.apiService.ValidateRequestedAuthentication(username, password).subscribe((data)=>{
+    this.tokenvalue = JSON.stringify(data);
+    console.log(data);
+    
     });
+
   }
-   // });
-  //}
+
+  
+  //   ngOnInit(){
+  //   this.apiService.ValidateRequestedAuthentication().subscribe((data)=>{
+  //     console.log(data);
+  //   });
+  // }
+   
 }

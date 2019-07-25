@@ -8,6 +8,7 @@ import { RegisterInterviewsComponent } from './register-interviews/register-inte
 import { ViewInterviewsComponent } from './view-interviews/view-interviews.component';
 import { UpdateInterviewsComponent } from './update-interviews/update-interviews.component';
 import { DeleteInterviewsComponent } from './delete-interviews/delete-interviews.component';
+import { ContextMenuComponent } from './context-menu/context-menu.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { DeleteInterviewsComponent } from './delete-interviews/delete-interviews
     RegisterInterviewsComponent,
     ViewInterviewsComponent,
     UpdateInterviewsComponent,
-    DeleteInterviewsComponent
+    DeleteInterviewsComponent,
+    ContextMenuComponent
   ],
   imports: [
     BrowserModule,

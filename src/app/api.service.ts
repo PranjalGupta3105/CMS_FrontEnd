@@ -10,7 +10,7 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public ValidateRequestedAuthentication(){
-    return this.httpClient.post(this.loginapiURL, {username: "Pranjal", password: "adminadmin"});
+  public ValidateRequestedAuthentication(username, password){
+    return this.httpClient.post(this.loginapiURL, {username, password});
   }
 }
