@@ -15,19 +15,17 @@ export class ContextMenuComponent implements OnInit {
 
     public CreateAnInterviewSchedule()
     {
-        // Code to Inject the "Create an Interview Schedule"
+      this.router.navigate(["register-interview"]);
     }
 
     public ViewAllScheduledInterviews()
     {
       this.router.navigate(["view-interviews"]);
-      // Code to Inject the "View all Interview Schedule"
     }
 
     public UpdateAnInterviewSchedule()
     {
-        // Code to Inject the "Update an Interview Schedule"
+      this.router.navigate(["update-interview"]);
     }
   
-
 }

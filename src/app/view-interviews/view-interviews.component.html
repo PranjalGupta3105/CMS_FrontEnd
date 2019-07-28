@@ -1,6 +1,36 @@
 <input type="button" (click)="getAllInterviews()" value="Get Me all Interview Details">
 <table>
     <tr>
-        <td>This is the first Element in the row</td>
+    <th>Interview ID</th>
+    <th>Company Name</th>
+    <th>Location</th>
+    <th>Type</th>
+    <th>Offered Role</th>
+    <th>Required Experience</th>
+    <th>Notice Period (in Months)</th>
+    <th>Pay Scale</th>
+    <th>Company Rating</th>
+    <th>Interview Venue</th>
+    <th>Interview Date</th>
+    <th>Contact Person</th>
+    <th>Contact Person Email</th>
+    <th>Contact Person Phone</th>
+    <th></th>
+    </tr>
+    <tr *ngFor="let interview of interviewsarray">
+        <td>{{interview._id}}</td>
+        <td>{{interview.Company}}</td>
+        <td>{{interview.Location}}</td>
+        <td>{{interview.Type}}</td>
+        <td>{{interview.Offered_Role}}</td>
+        <td>{{interview.Required_Experience}}</td>
+        <td>{{interview.Notice_Period}}</td>
+        <td>{{interview.Pay_Scale}}</td>
+        <td>{{interview.Company_Rating}}</td>
+        <td>{{interview.Interview_Venue}}</td>
+        <td>{{interview.Interview_Date}}</td>
+        <td>{{interview.Contact_Person}}</td>
+        <td>{{interview.Contact_Person_Email}}</td>
+        <td>{{interview.Contact_Person_Phone}}</td>  
     </tr>
 </table>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
   tokenvalue: string;
   token;
 
-  constructor(private apiService: ApiService,private router: Router){}
+  constructor(private apiService: ApiService,private router: Router,private cookieService: CookieService){}
 
   ngOnInit()
   { }
@@ -28,6 +29,9 @@ export class LoginComponent implements OnInit {
     
     this.apiService.ValidateRequestedAuthentication(username, password).subscribe((data)=>{
     this.tokenvalue = JSON.stringify(data);
+    this.cookieService.set("AuthToken",this.tokenvalue);
+    console.log("Saved Cookie in the Browser"+this.cookieService.get("AuthToken"));
+    
     console.log(data);
     if(data != null)
     {
@@ -35,10 +39,5 @@ export class LoginComponent implements OnInit {
     }
     });
   }
-  //   ngOnInit(){
-  //   this.apiService.ValidateRequestedAuthentication().subscribe((data)=>{
-  //     console.log(data);
-  //   });
-  // }
    
 }

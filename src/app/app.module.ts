@@ -4,12 +4,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CookieService } from 'ngx-cookie-service';
 import { RegisterInterviewsComponent } from './register-interviews/register-interviews.component';
 import { ViewInterviewsComponent } from './view-interviews/view-interviews.component';
 import { UpdateInterviewsComponent } from './update-interviews/update-interviews.component';
 import { DeleteInterviewsComponent } from './delete-interviews/delete-interviews.component';
 import { ContextMenuComponent } from './context-menu/context-menu.component';
 import { LoginComponent } from './login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,7 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

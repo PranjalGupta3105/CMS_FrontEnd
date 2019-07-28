@@ -8,7 +8,9 @@ import { ApiService } from '../api.service';
 })
 export class ViewInterviewsComponent implements OnInit {
 
-  constructor(private apiService: ApiService) { }
+  interviewsarray: [];
+
+  constructor(private apiService: ApiService) {}
 
   ngOnInit() 
   {
@@ -19,6 +21,9 @@ export class ViewInterviewsComponent implements OnInit {
   {
     this.apiService.GetAllScheduledInterviews().subscribe((data)=>
     {
+      // Getting the Interviews JSON array
+      this.interviewsarray =  JSON.parse(JSON.stringify(data))["interviews"];
+      console.log(this.interviewsarray);
       
     });
 
