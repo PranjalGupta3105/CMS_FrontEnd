@@ -1,1 +1,132 @@
-<p>register-interviews works!</p>
+<head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <h3>Please Enter the Interviews Details Below</h3>
+    <br>
+    <br>
+
+    <form>
+    <!-- <fieldset>
+        <legend>Please Enter the Interviews Details Below</legend> -->
+    <div class="form-group">
+        <div class="col-xs-9">
+        <label for="companyname">Company Name : </label>    
+        <input type="text" #CompanyName class="form-control input-sm" name="" id="">
+        </div>
+    </div>
+    <div class="form-group">
+            <div class="col-xs-9">
+            <label for="companyloaction">Company Location : </label>    
+            <input type="text" #CompanyLocation class="form-control input-sm" name="" id=""> 
+            </div>
+    </div>
+    <div class="form-group">
+            <div class="col-xs-9">
+            <label for="companytype">Company Type : </label>    
+            <input type="text" #CompanyType class="form-control input-sm" name="" id=""> 
+            </div>
+    </div>
+    <div class="form-group">
+            <div class="col-xs-9">
+            <label for="offeredrole">Offered Role : </label>    
+            <input type="text" #Role class="form-control input-sm" name="" id=""> 
+            </div>
+    </div>
+    <div class="form-group">
+            <div class="col-xs-9">
+            <label for="expectedexperience">Expected Experience : </label>    
+            <input type="text" #ExpExperience class="form-control input-sm" name="" id="">
+            </div> 
+    </div>
+    <div class="form-group">
+            <div class="col-xs-9">
+            <label for="noticeperiod">Notice Period Required : </label>    
+            <input type="text" #NoticePeriod class="form-control input-sm" name="" id=""> 
+            </div>
+    </div>
+    <div class="form-group">
+            <div class="col-xs-9">
+            <label for="payscale">Pay Scale : </label>    
+            <input type="text" #PayScale class="form-control input-sm" name="" id="">
+            </div> 
+    </div>
+    <div class="form-group">
+            <div class="col-xs-9">
+            <label for="companyrating">Company Rating : </label>    
+            <input type="text" #Rating class="form-control input-sm" name="" id=""> 
+            </div>
+    </div>
+    <div class="form-group">
+            <div class="col-xs-9">
+            <label for="interviewvenue">Interview Venue : </label>    
+            <input type="text" #Venue class="form-control input-sm" name="" id=""> 
+            </div>
+    </div>
+    <!-- <div class="form-group">
+            <div class="col-xs-9">
+            <label for="noticeperiod">Notice Period Required : </label>    
+            <input type="text" class="form-control input-sm" name="" id="">
+            </div> 
+    </div>
+    <div class="form-group">
+            <div class="col-xs-9">
+            <label for="payscale">Pay Scale : </label>    
+            <input type="text" class="form-control input-sm" name="" id="">
+            </div> 
+    </div>
+    <div class="form-group">
+            <div class="col-xs-9">
+            <label for="companyrating">Company Rating : </label>    
+            <input type="text" class="form-control input-sm" name="" id="">
+            </div>
+    </div>
+    <div class="form-group">
+            <div class="col-xs-9">
+            <label for="interviewvenue">Interview Venue : </label>    
+            <input type="text" class="form-control input-sm" name="" id="">
+            </div> 
+    </div> -->
+    <div class="form-group">
+            <div class="col-xs-9">
+            <label for="interviewdate">Interview Date : </label>    
+            <input type="text" #InterviewDate class="form-control input-sm" name="" id="">
+            </div> 
+    </div>
+    <div class="form-group">
+            <div class="col-xs-9">
+            <label for="contactperson">Contact Person : </label>    
+            <input type="text" #ContactPerson class="form-control input-sm" name="" id="">
+            </div> 
+    </div>
+    <div class="form-group">
+            <div class="col-xs-9">
+            <label for="contactpersonemail">Contact Person Email : </label>    
+            <input type="text" #ContactPersonEmail class="form-control input-sm" name="" id="">
+            </div> 
+    </div>
+    <div class="form-group">
+            <div class="col-xs-9">
+            <label for="contactpersonphone">Contact Person Phone: </label>    
+            <input type="text" #ContactPersonPhone class="form-control input-sm" name="" id="">
+            </div> 
+    </div>
+    <input type="button" class="btn btn-default" value="Submit" (click)="registerInterview(
+        CompanyName.value,
+        CompanyLocation.value,
+        CompanyType.value,
+        Role.value,
+        ExpExperience.value,
+        NoticePeriod.value,
+        PayScale.value,
+        Rating.value,
+        Venue.value,
+        InterviewDate.value,
+        ContactPerson.value,
+        ContactPersonEmail.value,
+        ContactPersonPhone.value)">
+    <!-- </fieldset> -->
+    </form>
+</body>

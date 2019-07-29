@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-view-interviews',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewInterviewsComponent implements OnInit {
 
-  constructor() { }
+  interviewsarray: [];
 
-  ngOnInit() {
+  constructor(private apiService: ApiService) {}
+
+  ngOnInit() 
+  {
+    
   }
 
+  public getAllInterviews()
+  {
+    this.apiService.GetAllScheduledInterviews().subscribe((data)=>
+    {
+      // Getting the Interviews JSON array
+      this.interviewsarray =  JSON.parse(JSON.stringify(data))["interviews"];
+      console.log(this.interviewsarray);
+      
+    });
+
+  }
 }

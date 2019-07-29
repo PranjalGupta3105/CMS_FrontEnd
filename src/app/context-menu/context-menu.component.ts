@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-context-menu',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContextMenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
+    public CreateAnInterviewSchedule()
+    {
+      this.router.navigate(["register-interview"]);
+    }
+
+    public ViewAllScheduledInterviews()
+    {
+      this.router.navigate(["view-interviews"]);
+    }
+
+    public UpdateAnInterviewSchedule()
+    {
+      this.router.navigate(["update-interview"]);
+    }
+  
 }
