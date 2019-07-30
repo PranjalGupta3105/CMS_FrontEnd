@@ -1,0 +1,27 @@
+h3{
+    text-align: center;
+}
+.form-control{
+width: auto;
+}
+
+form{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+.form-group{
+    width: 60%;
+
+}
+.form-group label{
+    width: 29%;
+}
+.form-group > div{
+    display:flex;
+    flex-flow: row;  
+}
+.fieldset{
+    align:center;
+}

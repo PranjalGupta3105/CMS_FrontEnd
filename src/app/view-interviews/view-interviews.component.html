@@ -1,5 +1,5 @@
 <input type="button" (click)="getAllInterviews()" value="Get Me all Interview Details">
-<table>
+<table border="1">
     <tr>
     <th>Interview ID</th>
     <th>Company Name</th>
@@ -32,5 +32,7 @@
         <td>{{interview.Contact_Person}}</td>
         <td>{{interview.Contact_Person_Email}}</td>
         <td>{{interview.Contact_Person_Phone}}</td>  
+        <td><input type="button" value="Update Interview Details" (click)="updateInterviewDetails(interview)"></td>
+        <td><input type="button" value="Delete Interview Details" (click)="deleteInterviewDetails(interview._id)"></td>
     </tr>
 </table>
