@@ -12,6 +12,7 @@ export class ApiService {
   newinterviewURL: string = "http://localhost:4000/api/RegisterNewInterview";
   updateInterviewURL: string = "http://localhost:4000/api/UpdateInterviewDetails/";
   deleteInterviewURL: string = "http://localhost:4000/api/RemoveSavedInterview/";
+  getInterviewByIdURL: string = "http://localhost:4000/api/GetInterview/";
 
   constructor(private httpClient: HttpClient,private cookieService: CookieService) { }
 
@@ -52,5 +53,14 @@ export class ApiService {
     const headers = new HttpHeaders().set("Authorization","Bearer "+JSON.parse(authtoken)["access_token"]);
 
     return this.httpClient.delete(this.deleteInterviewURL+interviewId,{headers} );
+  }
+
+  public GetInterviewById(interviewId){
+    var authtoken = this.cookieService.get("AuthToken");
+    console.log("This is the Access Token I have received"+"\n"+JSON.parse(authtoken)["access_token"]);
+
+    const headers = new HttpHeaders().set("Authorization","Bearer "+JSON.parse(authtoken)["access_token"]);
+
+    return this.httpClient.get(this.getInterviewByIdURL+interviewId,{headers} );
   }
 }
