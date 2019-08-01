@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-update-interviews',
@@ -8,21 +9,33 @@ import {Router} from '@angular/router';
 })
 export class UpdateInterviewsComponent implements OnInit {
 
-  constructor(private router: Router) { }
-  companyname : string ;
+  constructor(private router: Router, private apiService: ApiService) { }
+  
+  ngcompanyname : string ;
 
   ngOnInit() {
   }
 
   public setInterviewValues(interviewToBeUpdated)
   {
+    
+    // this.ngcompanyname = interviewToBeUpdated["Company"];
     this.router.navigate(["update-interview"]);
 
     console.log("I am inside Update Interview Component "+"\n"+"Values for the Interview to be Updated are:"+"\n");
-    console.log(interviewToBeUpdated);
+    // console.log(interviewToBeUpdated);
     //console.log(interviewToBeUpdated["Company"]);
     
-    this.companyname = interviewToBeUpdated["Company"];
+    //console.log(this.ngcompanyname);
+  
+    
+    console.log("Did it hit here");
+
+    this.apiService.GetInterviewById(interviewToBeUpdated["_id"]).subscribe((data)=>{
+    console.log(data);
+    this.ngcompanyname = data["Company"];      
+    });
+    
     // document.getElementById("companyloaction").innerHTML = interviewToBeUpdated["Location"];
     // document.getElementById("companytype").innerHTML = interviewToBeUpdated["Type"];
     // document.getElementById("offeredrole").innerHTML = interviewToBeUpdated["Offered_Role"];
