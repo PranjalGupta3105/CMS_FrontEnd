@@ -39,5 +39,10 @@ export class LoginComponent implements OnInit {
     }
     });
   }
+
+  public SignUp()
+  {
+    this.router.navigate(["sign-up"]);
+  }
    
 }
