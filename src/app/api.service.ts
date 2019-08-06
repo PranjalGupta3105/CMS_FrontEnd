@@ -7,14 +7,21 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class ApiService {
 
+  signupapiURL: string = "http://localhost:4000/api/SignUp";
   loginapiURL: string = "http://localhost:4000/api/login";
   getallScheduledapiURL: string = "http://localhost:4000/api/ScheduledInterviews";
   newinterviewURL: string = "http://localhost:4000/api/RegisterNewInterview";
   updateInterviewURL: string = "http://localhost:4000/api/UpdateInterviewDetails/";
   deleteInterviewURL: string = "http://localhost:4000/api/RemoveSavedInterview/";
   getInterviewByIdURL: string = "http://localhost:4000/api/GetInterview/";
+  forgotPasswordURL: string = "http://localhost:4000/api/ForgotPassword";
 
   constructor(private httpClient: HttpClient,private cookieService: CookieService) { }
+
+  public RegisterUser(Username, Password, Email, Phone)
+  {
+    return this.httpClient.post(this.signupapiURL, {Username, Password, Email, Phone});
+  }
 
   public ValidateRequestedAuthentication(username, password){
     return this.httpClient.post(this.loginapiURL, {username, password});
@@ -62,5 +69,9 @@ export class ApiService {
     const headers = new HttpHeaders().set("Authorization","Bearer "+JSON.parse(authtoken)["access_token"]);
 
     return this.httpClient.get(this.getInterviewByIdURL+interviewId,{headers} );
+  }
+
+  public UpdateUserPassword(Email, Phone, Password){
+    return this.httpClient.post(this.forgotPasswordURL,{Email, Phone, Password});
   }
 }

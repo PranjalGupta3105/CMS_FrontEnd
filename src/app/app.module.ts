@@ -11,6 +11,8 @@ import { UpdateInterviewsComponent } from './update-interviews/update-interviews
 import { DeleteInterviewsComponent } from './delete-interviews/delete-interviews.component';
 import { ContextMenuComponent } from './context-menu/context-menu.component';
 import { LoginComponent } from './login/login.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { LoginComponent } from './login/login.component';
     UpdateInterviewsComponent,
     DeleteInterviewsComponent,
     ContextMenuComponent,
-    LoginComponent
+    LoginComponent,
+    SignUpComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,

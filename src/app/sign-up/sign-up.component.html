@@ -1,0 +1,13 @@
+<form>
+    <input type="text" #Username value="Username">
+    <input type="password" #Password value="Password">
+    <input type="text" #Email value="Email">
+    <input type="text" #Phone value="Phone">
+    <input type="button" value="Submit" (click)="RegisterNewUser
+                                                                (
+                                                                Username.value, 
+                                                                Password.value, 
+                                                                Email.value, 
+                                                                Phone.value
+                                                                )">
+</form>
