@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+#footer{
+    display: table;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.material-icons { color: rgba(242, 38, 19, 1); }
