@@ -7,14 +7,18 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class ApiService {
 
-  signupapiURL: string = "http://localhost:4000/api/SignUp";
-  loginapiURL: string = "http://localhost:4000/api/login";
-  getallScheduledapiURL: string = "http://localhost:4000/api/ScheduledInterviews";
-  newinterviewURL: string = "http://localhost:4000/api/RegisterNewInterview";
-  updateInterviewURL: string = "http://localhost:4000/api/UpdateInterviewDetails/";
-  deleteInterviewURL: string = "http://localhost:4000/api/RemoveSavedInterview/";
-  getInterviewByIdURL: string = "http://localhost:4000/api/GetInterview/";
-  forgotPasswordURL: string = "http://localhost:4000/api/ForgotPassword";
+  herokuBaseURL: string = "https://";
+  localhostURL: string = "http://localhost:4000";
+
+
+  signupapiURL: string = this.herokuBaseURL+"/api/SignUp";
+  loginapiURL: string = this.herokuBaseURL+"/api/login";
+  getallScheduledapiURL: string = this.herokuBaseURL+"/api/ScheduledInterviews";
+  newinterviewURL: string = this.herokuBaseURL+"/api/RegisterNewInterview";
+  updateInterviewURL: string = this.herokuBaseURL+"/api/UpdateInterviewDetails/";
+  deleteInterviewURL: string = this.herokuBaseURL+"/api/RemoveSavedInterview/";
+  getInterviewByIdURL: string = this.herokuBaseURL+"/api/GetInterview/";
+  forgotPasswordURL: string = this.herokuBaseURL+"/api/ForgotPassword";
 
   constructor(private httpClient: HttpClient,private cookieService: CookieService) { }
 

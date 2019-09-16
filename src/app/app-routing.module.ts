@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SignUpComponent } from './sign-up/sign-up.component';
+// import { SignUpComponent } from './sign-up/sign-up.component';
 import { ContextMenuComponent } from './context-menu/context-menu.component';
 import { RegisterInterviewsComponent } from './register-interviews/register-interviews.component';
 import { ViewInterviewsComponent } from './view-interviews/view-interviews.component';
@@ -12,9 +12,9 @@ const routes: Routes = [
   {
     path: "", component: LoginComponent
   },
-  {
-    path: "sign-up", component: SignUpComponent
-  },
+  // {
+  //   path: "sign-up", component: SignUpComponent
+  // },
   {
     path: "login", component: LoginComponent
   },
